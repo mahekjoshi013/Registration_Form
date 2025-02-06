@@ -1,9 +1,9 @@
-package Package_ABC;
-import javax.swing.*;
-import java.util.*;
-import java.awt.event.*;
-public class Registration_Form
-{
+    package Package_ABC;
+    import javax.swing.*;
+    import java.util.*;
+    import java.awt.event.*;
+    public class Registration_Form
+    {
 	String n,l,e,no;
 	Scanner sc = new Scanner(System.in);
 	Boolean b;
@@ -18,7 +18,8 @@ public class Registration_Form
 	JDialog previewbox,submitbox;
 	JComboBox<String> combobox;
 	
-	public void Input()
+	
+        public void Input()
 	{
 		System.out.println("Please Enter your First Name: ");
 		n = sc.next();
@@ -72,35 +73,35 @@ public class Registration_Form
 	}
 	
 	public static boolean isValidEmail(String email, String invalidChars)
-{
-        if (!email.endsWith("@gmail.com"))
-        { // Check if it ends with @gmail.com
-            return false;
-        }
-
-        int atIndex = email.indexOf("@gmail.com"); // Position of '@gmail.com'
-        if (atIndex == 0)
-        {  // Ensure there's at least one character before '@'
-            return false;
-        }
-        
-        if(!Character.isLowerCase(email.charAt(0)))
         {
-        	return false;
-        }
+            if (!email.endsWith("@gmail.com"))
+            { // Check if it ends with @gmail.com
+                 return false;
+            }
 
-        // Check for invalid special characters
-        for (int i = 0; i < atIndex; i++)
-        {
-            char ch = email.charAt(i);
-            if (invalidChars.indexOf(ch) != -1)
-            {
+            int atIndex = email.indexOf("@gmail.com"); // Position of '@gmail.com'
+            if (atIndex == 0)
+            {  // Ensure there's at least one character before '@'
                 return false;
             }
-        }
+        
+            if(!Character.isLowerCase(email.charAt(0)))
+            {
+        	return false;
+            }
 
-        return true;  // If all conditions are met, return true
-    }
+           // Check for invalid special characters
+           for (int i = 0; i < atIndex; i++)
+           {
+               char ch = email.charAt(i);
+               if (invalidChars.indexOf(ch) != -1)
+               {
+                   return false;
+               }
+           }
+
+           return true;  // If all conditions are met, return true
+        }
 			
 	public void Frames()
 	{
